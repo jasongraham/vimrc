@@ -229,19 +229,6 @@ if has ('autocmd')
         " limit text width in markdown and latex files to 70 chars
         autocmd filetype markdown set tw=78 wrap
 
-        " Render YAML front matter inside Markdown docs as comments
-        autocmd filetype markdown syntax region frontmatter start=/\%^---$/ end=/^---$/
-        autocmd filetype markdown highlight link frontmatter comment
-
-        " Render stuff inside of liquid tags as comments as well
-        " ie, {% post.date | date "%b, %d, %Y" %}
-		"autocmd filetype markdown syntax region liquid start=/^{%/ end=/%}$/
-        "autocmd filetype markdown highlight link liquid comment
-
-        " Render stuff inside of liquid tags as comments as well
-        " ie, {% post.date | date "%b, %d, %Y" %}
-		autocmd filetype markdown syntax region pygments start=/^{% highlight .* %}$/ end=/^{% endhighlight %}$/
-        autocmd filetype markdown highlight link pygments special
     augroup end "}}}
 
     augroup html_files "{{{
