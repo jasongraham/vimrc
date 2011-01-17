@@ -16,6 +16,15 @@ onto your machine, and update your ~/.vimrc file as follows:
 	# Replace ~/.vimrc your current .vimrc file
 	echo "source ~/.vim/vimrc" > ~/.vimrc
 
+	# Initialize and update the git submodules in the bundle/ dir
+	cd ~/.vim
+	git submodule init
+	git submodule update
+
+	# make user.vim for machine or user specific changes
+	# (git doesn't track this file)
+	touch user.vim
+
 Other necessary programs installed are:
 
 + [pyflakes][]. (on debian based systems, `sudo apt-get install pyflakes`).
