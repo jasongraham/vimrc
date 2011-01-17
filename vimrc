@@ -127,6 +127,33 @@ set lazyredraw                  " don't update the display while executing macro
 set laststatus=2                " tell VIM to always put a status line in, even
                                 "    if there is only one window
 set cmdheight=2                 " use a status bar that is 2 rows high
+
+" file path and save state, line ends, and git branch
+"set statusline=%<%F%h%m%r%h%w%y\ %{&ff}\ 
+
+set statusline= " clear the statusline if vimrc is reloaded
+set statusline+=%f       "tail of the filename
+set statusline+=[%{strlen(&fenc)?&fenc:'none'}, "file encoding
+set statusline+=%{&ff}] "file format
+set statusline+=%h      "help file flag
+set statusline+=%m      "modified flag
+set statusline+=%r      "read only flag
+set statusline+=%y      "filetype
+set statusline+=%{fugitive#statusline()} " Git branch through fugative
+set statusline+=%=      "left/right separator
+
+" Statusline warnings used with syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+set statusline+=%c,     "cursor column
+set statusline+=%l/%L   "cursor line/total lines
+set statusline+=\ %P    "percent through file
+
+
+" column, ascii value under cursor, line number
+"set statusline+=%=\col:%c%V\ ascii:%b\ lin:%l\,%L\ %P
 " }}}
 
 " Syntax highlighting and colorschemes {{{
@@ -204,6 +231,12 @@ let NERDTreeIgnore=[ '\.pyc$', '\.pyo$', '\.py\$class$', '\.obj$',
 let g:yankring_history_dir = '$HOME/.vim/.tmp'
 nmap <leader>r :YRShow<cr>
 "}}}
+
+" Syntastic configuration {{{
+let g:syntastic_enable_signs=1
+let g:syntastic_auto_loc_list=1
+let g:syntastic_quiet_warnings=1
+" }}}
 
 " filetype specific behaviours {{{
 if has ('autocmd')
