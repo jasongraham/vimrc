@@ -7,9 +7,6 @@
 [submodule "bundle/vim-fugative"]
 	path = bundle/vim-fugative
 	url = git://github.com/tpope/vim-fugitive.git
-[submodule "bundle/vim-pyflakes"]
-	path = bundle/vim-pyflakes
-	url = git://github.com/nvie/vim-pyflakes.git
 [submodule "bundle/vim-repeat"]
 	path = bundle/vim-repeat
 	url = git://github.com/tpope/vim-repeat.git
@@ -34,3 +31,9 @@
 [submodule "bundle/vim-liquid"]
 	path = bundle/vim-liquid
 	url = git://github.com/tpope/vim-liquid.git
+[submodule "bundle/syntastic"]
+	path = bundle/syntastic
+	url = git://github.com/scrooloose/syntastic.git
+[submodule "bundle/vim-pyflakes"]
+	path = bundle/vim-pyflakes
+	url = git://github.com/nvie/vim-pyflakes.git
