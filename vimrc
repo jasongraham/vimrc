@@ -25,7 +25,7 @@ set hidden          " hide buffers instead of closing them. This
 set switchbuf=useopen
                     " reveal already open files from the quickfix window
                     "  instead of opening new buffers
-set nowrap          " don't wrap lines
+"set nowrap          " don't wrap lines
 set tabstop=4       " a tab is 4 spaces
 set backspace=indent,eol,start
                     " allow backspacing over everything in insert mode
