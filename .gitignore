@@ -1,3 +1,4 @@
 user.vim
 .tmp/*
 .undo/*
+.netrwhist
