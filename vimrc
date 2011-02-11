@@ -268,6 +268,12 @@ if has ('autocmd')
         " don't show tabs in html / xml files
         autocmd filetype html,xml set listchars-=tab:>.
     augroup end "}}}
+
+    augroup matlab_files "{{{
+    	au!
+    	" Call mlint checker
+    	autocmd BufWritePost *.m compiler mlint
+	augroup end "}}}
 endif
 " }}}
 
