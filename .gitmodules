@@ -34,3 +34,9 @@
 [submodule "bundle/gitolite.vim"]
 	path = bundle/gitolite.vim
 	url = git://github.com/tmatilai/gitolite.vim.git
+[submodule "bundle/vim-matchit"]
+	path = bundle/vim-matchit
+	url = git://github.com/edsono/vim-matchit.git
+[submodule "bundle/vim-endwise"]
+	path = bundle/vim-endwise
+	url = git://github.com/tangledhelix/vim-endwise.git
