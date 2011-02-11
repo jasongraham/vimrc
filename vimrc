@@ -235,12 +235,9 @@ nmap <leader>r :YRShow<cr>
 " Syntastic configuration {{{
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=1
-let g:syntastic_quiet_warnings=1
 
-" Don't use syntastic for python files, we have
-" vim-pyflakes for this (not to mention syntastic
-" doesn't seem to be working with python)
-let g:syntastic_disabled_filetypes = ['python']
+" note: pyflakes requires we have quiet warnings turned off
+let g:syntastic_quiet_warnings=0
 " }}}
 
 " filetype specific behaviours {{{
@@ -256,9 +253,6 @@ if has ('autocmd')
 
         " But disable autowrapping as it is super annoying
         autocmd filetype python setlocal formatoptions-=t
-
-        " Run a quick static syntax check every time we save a Python file
-        autocmd BufWritePost *.py call Pyflakes()
     augroup end "}}}
 
     augroup markdown_files "{{{
