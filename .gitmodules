@@ -22,15 +22,9 @@
 [submodule "bundle/vim-haml"]
 	path = bundle/vim-haml
 	url = git://github.com/tpope/vim-haml.git
-[submodule "bundle/scss-syntax.vim"]
-	path = bundle/scss-syntax.vim
-	url = git://github.com/cakebaker/scss-syntax.vim.git
 [submodule "bundle/snipmate.vim"]
 	path = bundle/snipmate.vim
 	url = git://github.com/msanders/snipmate.vim.git
-[submodule "bundle/vim-liquid"]
-	path = bundle/vim-liquid
-	url = git://github.com/tpope/vim-liquid.git
 [submodule "bundle/syntastic"]
 	path = bundle/syntastic
 	url = git://github.com/scrooloose/syntastic.git
