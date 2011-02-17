@@ -8,22 +8,17 @@ onto your machine, and follow these instructions
 
 	# First, back up your current ~/.vim folder and ~/.vimrc
 
-	# Clone this git repository
-	git clone http://code.the-graham.com/vimrc/ ~/.vim
+	# Clone this git repository and setup the submodules
+	git clone --recursive http://code.the-graham.com/vimrc/ ~/.vim
 	# OR
-	git clone git://github.com/jasongraham/vimrc ~/.vim
+	git clone --recursive git://github.com/jasongraham/vimrc ~/.vim
 
 	# Replace ~/.vimrc with the following 
 	echo "source ~/.vim/vimrc" > ~/.vimrc
 
-	# Initialize and update the git submodules in the bundle/ dir
-	cd ~/.vim
-	git submodule init
-	git submodule update
-
 	# make user.vim for machine or user specific changes
 	# (git doesn't track this file)
-	touch user.vim
+	touch ~/.vim/user.vim
 
 Other necessary programs installed are:
 
