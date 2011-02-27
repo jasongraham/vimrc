@@ -190,8 +190,11 @@ endfunction
 " Clears the search register
 nmap <silent> <leader>/ :nohlsearch<CR>
 
-" Strip all trailing whitespace from a file, using ,w
+" Strip all trailing whitespace from a file, using ,W
 nnoremap <leader>W :%s/\s\+$//<CR>:let @/=''<CR>
+
+" Rainbow parenthesis
+nmap <leader>R :RainbowParenthesesToggle<CR>
 " }}}
 
 " NERDTree settings {{{
