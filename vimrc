@@ -151,9 +151,17 @@ set statusline+=%c,     "cursor column
 set statusline+=%l/%L   "cursor line/total lines
 set statusline+=\ %P    "percent through file
 
-
 " column, ascii value under cursor, line number
 "set statusline+=%=\col:%c%V\ ascii:%b\ lin:%l\,%L\ %P
+
+if has("gui_running")
+	" Remove menu bar
+	"set guioptions-=m
+
+	" Remove toolbar
+	set guioptions-=T
+endif
+
 " }}}
 
 " Syntax highlighting and colorschemes {{{
@@ -161,6 +169,7 @@ set t_Co=256
 if &t_Co >= 256 || has("gui_running")
    colorscheme zenburn
 endif
+
 if &t_Co > 2 || has("gui_running")
    " switch syntax highlighting on, when the terminal has colors
    syntax on
