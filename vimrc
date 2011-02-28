@@ -164,6 +164,12 @@ endif
 
 " }}}
 
+" Indent highlight guides {{{
+" :nmap <Leader>ig :IndentGuidesToggle<CR> " This is the default mapping
+let g:indent_guides_guide_size=1
+let g:indent_guides_start_level=2
+"}}}
+
 " Syntax highlighting and colorschemes {{{
 set t_Co=256
 if &t_Co >= 256 || has("gui_running")
