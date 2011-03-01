@@ -297,6 +297,12 @@ if has ('autocmd')
         autocmd filetype html,xml set listchars-=tab:>.
     augroup end "}}}
 
+    augroup css_files "{{{
+    	au!
+    	" Smaller indents
+    	autocmd filetype css,sass,scss,less setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+	augroup end "}}}
+
     augroup matlab_files "{{{
     	au!
     	" Call mlint checker
