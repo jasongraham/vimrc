@@ -4,9 +4,6 @@
 [submodule "bundle/nerdtree"]
 	path = bundle/nerdtree
 	url = git://github.com/scrooloose/nerdtree.git
-[submodule "bundle/vim-fugative"]
-	path = bundle/vim-fugative
-	url = git://github.com/tpope/vim-fugitive.git
 [submodule "bundle/vim-repeat"]
 	path = bundle/vim-repeat
 	url = git://github.com/tpope/vim-repeat.git
@@ -46,3 +43,6 @@
 [submodule "bundle/vim-extradite"]
 	path = bundle/vim-extradite
 	url = git://github.com/int3/vim-extradite.git
+[submodule "bundle/vim-fugitive"]
+	path = bundle/vim-fugitive
+	url = git://github.com/tpope/vim-fugitive.git
