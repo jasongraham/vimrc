@@ -273,6 +273,12 @@ if has ('autocmd')
         autocmd filetype python setlocal formatoptions-=t
     augroup end "}}}
 
+    augroup ruby_files "{{{
+    	au!
+    	" Expand tabs into spaces
+    	autocmd filetype ruby setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+	augroup end "}}}
+
     augroup markdown_files "{{{
         au!
 
