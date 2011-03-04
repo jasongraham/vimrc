@@ -160,6 +160,10 @@ if has("gui_running")
 
 	" Remove toolbar
 	set guioptions-=T
+
+	" disable mouse select -> visual mode
+	set mouse-=a
+
 endif
 
 " }}}
