@@ -262,6 +262,11 @@ let g:syntastic_auto_loc_list=1
 let g:syntastic_quiet_warnings=0
 " }}}
 
+" TaskList configuration {{{
+" apparently this is already the mapping
+"nmap <leader>t :TaskList<cr>
+"}}}
+
 " filetype specific behaviours {{{
 if has ('autocmd')
     filetype plugin indent on
