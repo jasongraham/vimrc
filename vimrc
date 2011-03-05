@@ -289,8 +289,8 @@ if has ('autocmd')
     augroup python_files "{{{
         au!
         " Expand tabs in python to be spaces
-        autocmd filetype python setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
-        autocmd filetype python setlocal textwidth=80
+        autocmd filetype python setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4
+        autocmd filetype python setlocal textwidth=79
         autocmd filetype python match ErrorMsg '\%>80v.\+'
 
         " But disable autowrapping as it is super annoying
