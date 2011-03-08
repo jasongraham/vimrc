@@ -282,6 +282,10 @@ let Tlist_Use_Right_Window=1
 nmap <leader>p :TlistToggle<cr>
 "}}}
 
+" Supertab configuration {{{
+let g:SuperTabDefaultCompletionType = "context"
+"}}}
+
 " filetype specific behaviours {{{
 if has ('autocmd')
     filetype plugin indent on
