@@ -332,6 +332,9 @@ if has ('autocmd')
         " limit text width in markdown and latex files to 70 chars
         autocmd filetype markdown set tw=78 wrap
 
+		" Eliminate end of line whitespace highlight
+		autocmd filetype markdown hi ExtraWhitespace ctermbg=none guibg=none
+
     augroup end "}}}
 
     augroup html_files "{{{
@@ -350,6 +353,13 @@ if has ('autocmd')
     	au!
     	" Call mlint checker
     	autocmd BufWritePost *.m compiler mlint
+	augroup end "}}}
+
+	augroup mail_files "{{{
+		au!
+		" Eliminate end of line whitespace highlight
+		autocmd filetype mail hi ExtraWhitespace ctermbg=none guibg=none
+
 	augroup end "}}}
 endif
 " }}}
