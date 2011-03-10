@@ -209,8 +209,19 @@ endfunction
 " Clears the search register
 nmap <silent> <leader>/ :nohlsearch<CR>
 
-" Strip all trailing whitespace from a file, using ,W
-nnoremap <leader>W :%s/\s\+$//<CR>:let @/=''<CR>
+" Strip all trailing whitespace from a file, using ,<space>
+function! <SID>StripTrailingWhitespace()
+    " Preparation: save last search, and cursor position.
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+    " Do the business:
+    %s/\s\+$//e
+    " Clean up: restore previous search history, and cursor position
+    let @/=_s
+    call cursor(l, c)
+endfunction
+nmap <silent> <leader><space> :call <SID>StripTrailingWhitespace()<CR>
 
 " Rainbow parenthesis
 nmap <leader>R :RainbowParenthesesToggle<CR>
