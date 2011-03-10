@@ -129,7 +129,7 @@ set laststatus=2                " tell VIM to always put a status line in, even
 set cmdheight=2                 " use a status bar that is 2 rows high
 
 " file path and save state, line ends, and git branch
-"set statusline=%<%F%h%m%r%h%w%y\ %{&ff}\ 
+"set statusline=%<%F%h%m%r%h%w%y\ %{&ff}\
 
 set statusline= " clear the statusline if vimrc is reloaded
 set statusline+=%f       "tail of the filename
@@ -222,6 +222,14 @@ function! <SID>StripTrailingWhitespace()
     call cursor(l, c)
 endfunction
 nmap <silent> <leader><space> :call <SID>StripTrailingWhitespace()<CR>
+
+" Highlight all trailing whitespace
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
 
 " Rainbow parenthesis
 nmap <leader>R :RainbowParenthesesToggle<CR>
@@ -354,7 +362,7 @@ if has("autocmd")
 		" Add skeleton fillings for normal python files
 		if a:file =~ '.*\.py$'
 			execute "0r ~/.vim/skeleton/template.py"
-			
+
 		" C file and header file templates
 		elseif a:file =~ '.*\.c$'
 			execute "0r ~/.vim/skeleton/template.c"
