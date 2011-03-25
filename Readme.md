@@ -1,6 +1,6 @@
 # Vimrc #
 
-This is what my ~/vim folder on my machines looks like.  I'm still in the
+This is what my `~/.vim` folder on my machines looks like.  I'm still in the
 process of tweaking it, but it is fully usable.
 
 If you want to try out my configuration, clone the git repository somewhere
@@ -23,8 +23,10 @@ onto your machine, and follow these instructions
 Other necessary programs installed are:
 
 + [pyflakes][]. (on debian based systems, `sudo apt-get install pyflakes`).
++ [exuberant ctags][]. (on debian based systems, `sudo apt-get install exuberant-ctags`).
 
 [pyflakes]:http://pypi.python.org/pypi/pyflakes/
+[exuberant ctags]:http://ctags.sourceforge.net/
 
 This is inspired and based on
 
