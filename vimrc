@@ -47,7 +47,11 @@ set history=1000     " Remeber many commands and search history
 set undolevels=1000  " use many undo levels
 if v:version >= 730
 	set undofile     " Keep a persistent backup file
-	set undodir=~/.vim/.undo,~/tmp,/tmp
+	if has("win32")
+		set undodir=$HOME/vimfiles/undo,$HOME/tmp,/tmp
+	else
+		set undodir=$HOME/.vim/.undo,$HOME/tmp,/tmp
+	endif
 endif
 set wildignore=*.swp,*.bak,*.pyc,*.class
 set title            " use the terminal's title
@@ -70,7 +74,11 @@ endif
 set nobackup
 "set noswapfile
 
-set directory=~/.vim/.tmp,~/tmp,/tmp
+if has("win32")
+	set directory=$HOME/vimfiles/tmp,$HOME/tmp,/tmp
+else
+	set directory=$HOME/.vim/.tmp,$HOME/tmp,/tmp
+endif
                       " store swap files in one of these directories
                       " (in case it is ever turned on)
 
@@ -243,7 +251,11 @@ nmap <leader>m :NERDTreeClose<CR>:NERDTreeFind<CR>
 nmap <leader>N :NERDTreeClose<CR>
 
 " Store the bookmarks file
-let NERDTreeBookmarksFile=expand("$HOME/.vim/NERDTreeBookmarks")
+if has("win32")
+	let NERDTreeBookmarksFile=expand("$HOME/vimfiles/NERDTreeBookmarks")
+else
+	let NERDTreeBookmarksFile=expand("$HOME/.vim/NERDTreeBookmarks")
+endif
 
 " Show the bookmarks table on startup
 let NERDTreeShowBookmarks=1
@@ -269,7 +281,11 @@ let NERDTreeIgnore=[ '\.pyc$', '\.pyo$', '\.py\$class$', '\.obj$',
 " }}}
 
 " YankRing configuration {{{
-let g:yankring_history_dir = '$HOME/.vim/.tmp'
+if has("win32")
+	let g:yankring_history_dir = '$HOME/vimfiles/tmp'
+else
+	let g:yankring_history_dir = '$HOME/.vim/.tmp'
+endif
 nmap <leader>r :YRShow<cr>
 "}}}
 
@@ -371,17 +387,34 @@ if has("autocmd")
 	function LoadTemplate(file)
 		" Add skeleton fillings for normal python files
 		if a:file =~ '.*\.py$'
-			execute "0r ~/.vim/skeleton/template.py"
+			if has("win32")
+				execute "0r ~/vimfiles/skeleton/template.py"
+			else
+				execute "0r ~/.vim/skeleton/template.py"
+			endif;
 
 		" C file and header file templates
 		elseif a:file =~ '.*\.c$'
-			execute "0r ~/.vim/skeleton/template.c"
+			if has("win32")
+				execute "0r ~/vimfiles/skeleton/template.c"
+			else
+				execute "0r ~/.vim/skeleton/template.c"
+			endif
 		elseif a:file =~ '.*\.h$'
-			execute "0r ~/.vim/skeleton/template.h"
+			if has("win32")
+				execute "0r ~/vimfiles/skeleton/template.h"
+			else
+				execute "0r ~/.vim/skeleton/template.h"
+			end
 
 		" markdown (jekyll) file template)
 		elseif a:file =~ '.*\markdown$'
-			execute "0r ~/.vim/skeleton/template.markdown"
+			if has("win32")
+				execute "0r ~/vimfiles/skeleton/template.markdown"
+			else
+				execute "0r ~/.vim/skeleton/template.markdown"
+			endif
+
 		endif
 	endfunction
 	endif
@@ -391,5 +424,9 @@ endif
 "}}}
 
 " Extra user or machine specific settings {{{
-source ~/.vim/user.vim
+if has("win32")
+	source ~/vimfiles/user.vim
+else
+	source ~/.vim/user.vim
+endif
 "}}}
