@@ -48,7 +48,7 @@ set undolevels=1000  " use many undo levels
 if v:version >= 730
 	set undofile     " Keep a persistent backup file
 	if has("win32")
-		set undodir=$HOME/vimfiles/undo,$HOME/tmp,/tmp
+		set undodir=$HOME/vimfiles/.undo,$HOME/tmp,/tmp
 	else
 		set undodir=$HOME/.vim/.undo,$HOME/tmp,/tmp
 	endif
@@ -75,7 +75,7 @@ set nobackup
 "set noswapfile
 
 if has("win32")
-	set directory=$HOME/vimfiles/tmp,$HOME/tmp,/tmp
+	set directory=$HOME/vimfiles/.tmp,$HOME/tmp,/tmp
 else
 	set directory=$HOME/.vim/.tmp,$HOME/tmp,/tmp
 endif
@@ -337,7 +337,7 @@ let NERDTreeIgnore=[ '\.pyc$', '\.pyo$', '\.py\$class$', '\.obj$',
 
 " YankRing configuration {{{
 if has("win32")
-	let g:yankring_history_dir = '$HOME/vimfiles/tmp'
+	let g:yankring_history_dir = '$HOME/vimfiles/.tmp'
 else
 	let g:yankring_history_dir = '$HOME/.vim/.tmp'
 endif
