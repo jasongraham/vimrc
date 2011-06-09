@@ -446,7 +446,7 @@ if has("autocmd")
 				execute "0r ~/vimfiles/skeleton/template.py"
 			else
 				execute "0r ~/.vim/skeleton/template.py"
-			endif;
+			endif
 
 		" C file and header file templates
 		elseif a:file =~ '.*\.c$'
@@ -460,7 +460,7 @@ if has("autocmd")
 				execute "0r ~/vimfiles/skeleton/template.h"
 			else
 				execute "0r ~/.vim/skeleton/template.h"
-			end
+			endif
 
 		" markdown (jekyll) file template)
 		elseif a:file =~ '.*\markdown$'
@@ -485,3 +485,4 @@ else
 	source ~/.vim/user.vim
 endif
 "}}}
+
