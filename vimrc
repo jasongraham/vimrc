@@ -357,19 +357,9 @@ let g:syntastic_quiet_warnings=0
 "nmap <leader>t :TaskList<cr>
 "}}}
 
-" Taglist configuration {{{
-let Tlist_Auto_Highlight_Tag=1
-let Tlist_Compact_Format=1
-let Tlist_Enable_Fold_Column=0
-let Tlist_Exit_OnlyWindow=1
-let Tlist_File_Fold_Auto_Close=1
-let Tlist_GainFocus_On_ToggleOpen=1
-let Tlist_Inc_Winwidth=0
-let Tlist_Show_Menu=1
-let Tlist_Sort_Type="order"
-let Tlist_Use_Right_Window=1
+" Tagbar configuration {{{
 
-nmap <leader>p :TlistToggle<cr>
+nmap <leader>p :TagbarToggle<cr>
 "}}}
 
 " Supertab configuration {{{
@@ -485,4 +475,5 @@ else
 	source ~/.vim/user.vim
 endif
 "}}}
+
 

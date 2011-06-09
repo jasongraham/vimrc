@@ -49,9 +49,9 @@
 [submodule "bundle/tasklist.vim"]
 	path = bundle/tasklist.vim
 	url = git://github.com/vim-scripts/TaskList.vim.git
-[submodule "bundle/taglist.vim"]
-	path = bundle/taglist.vim
-	url = git://github.com/vim-scripts/taglist.vim.git
 [submodule "bundle/supertab"]
 	path = bundle/supertab
 	url = git://github.com/ervandew/supertab.git
+[submodule "bundle/tagbar"]
+	path = bundle/tagbar
+	url = git://github.com/majutsushi/tagbar
