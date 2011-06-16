@@ -477,4 +477,10 @@ else
 endif
 "}}}
 
+" gedim settings {{{
+if has("gui_running")
+	let g:screenDimensions = { '1920,1080': [ 100, 80 ] }
+endif
+" }}}
+
 

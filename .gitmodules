@@ -64,3 +64,6 @@
 [submodule "bundle/checkattach"]
 	path = bundle/checkattach
 	url = git://github.com/vim-scripts/CheckAttach.vim.git
+[submodule "bundle/gedim"]
+	path = bundle/gedim
+	url = git://github.com/vim-scripts/gedim.git
