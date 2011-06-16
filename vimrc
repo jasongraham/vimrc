@@ -15,7 +15,7 @@ call pathogen#runtime_append_all_bundles()
 filetype plugin indent on " enable detection, plugins, and indenting in one step
 
 " Prevent security exploits?
-set modelines=0
+set modelines=1
 
 " Some basic settings "{{{
 set hidden          " hide buffers instead of closing them. This
