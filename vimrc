@@ -420,6 +420,7 @@ if has ('autocmd')
 		au!
 		" Eliminate end of line whitespace highlight
 		autocmd filetype mail hi ExtraWhitespace ctermbg=none guibg=none
+		let g:attach_check_keywords = 'attach,attachment,attached,included'
 
 	augroup end "}}}
 endif

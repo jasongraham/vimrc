@@ -61,3 +61,6 @@
 [submodule "bundle/securemodelines"]
 	path = bundle/securemodelines
 	url = git://github.com/ciaranm/securemodelines
+[submodule "bundle/checkattach"]
+	path = bundle/checkattach
+	url = git://github.com/vim-scripts/CheckAttach.vim.git
