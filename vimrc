@@ -434,31 +434,31 @@ if has("autocmd")
 		" Add skeleton fillings for normal python files
 		if a:file =~ '.*\.py$'
 			if has("win32")
-				execute "0r ~/vimfiles/skeleton/template.py"
+				execute "0r $HOME/vimfiles/skeleton/template.py"
 			else
-				execute "0r ~/.vim/skeleton/template.py"
+				execute "0r $HOME/.vim/skeleton/template.py"
 			endif
 
 		" C file and header file templates
 		elseif a:file =~ '.*\.c$'
 			if has("win32")
-				execute "0r ~/vimfiles/skeleton/template.c"
+				execute "0r $HOME/vimfiles/skeleton/template.c"
 			else
-				execute "0r ~/.vim/skeleton/template.c"
+				execute "0r $HOME/.vim/skeleton/template.c"
 			endif
 		elseif a:file =~ '.*\.h$'
 			if has("win32")
-				execute "0r ~/vimfiles/skeleton/template.h"
+				execute "0r $HOME/vimfiles/skeleton/template.h"
 			else
-				execute "0r ~/.vim/skeleton/template.h"
+				execute "0r $HOME/.vim/skeleton/template.h"
 			endif
 
 		" markdown (jekyll) file template)
 		elseif a:file =~ '.*\markdown$'
 			if has("win32")
-				execute "0r ~/vimfiles/skeleton/template.markdown"
+				execute "0r $HOME/vimfiles/skeleton/template.markdown"
 			else
-				execute "0r ~/.vim/skeleton/template.markdown"
+				execute "0r $HOME/.vim/skeleton/template.markdown"
 			endif
 
 		endif
@@ -471,9 +471,9 @@ endif
 
 " Extra user or machine specific settings {{{
 if has("win32")
-	source ~/vimfiles/user.vim
+	source $HOME/vimfiles/user.vim
 else
-	source ~/.vim/user.vim
+	source $HOME/.vim/user.vim
 endif
 "}}}
 
