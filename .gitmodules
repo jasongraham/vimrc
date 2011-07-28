@@ -69,4 +69,4 @@
 	url = git://github.com/vim-scripts/gedim.git
 [submodule "bundle/agtd"]
 	path = bundle/agtd
-	url = git://github.com/FGarcia/agtd.git
+	url = git://github.com/jasongraham/agtd.git

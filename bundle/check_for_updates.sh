@@ -6,8 +6,8 @@ for submodule in *; do
 	if [ -d "$submodule/.git" ]; then
 		cd "$submodule"
 		echo "--- $submodule:"
-		if [ "$submodule" = "pyunit" ]; then
-			git checkout develop
+		if [ "$submodule" = "agtd" ]; then
+			git checkout calendar_changes
 		else
 			git checkout master
 		fi
