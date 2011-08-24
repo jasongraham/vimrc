@@ -493,3 +493,6 @@ function! <SID>SynStack()
 endfunc
 " }}}
 
+" AGTD settings {{{
+let g:agtd_calendar_window = 'tab'
+"}}}
