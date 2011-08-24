@@ -7,7 +7,7 @@ for submodule in *; do
 		cd "$submodule"
 		echo "--- $submodule:"
 		if [ "$submodule" = "agtd" ]; then
-			git checkout calendar_changes
+			git checkout develop
 		else
 			git checkout master
 		fi
