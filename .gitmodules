@@ -70,3 +70,6 @@
 [submodule "bundle/agtd"]
 	path = bundle/agtd
 	url = git://github.com/jasongraham/agtd.git
+[submodule "bundle/xterm-color-table"]
+	path = bundle/xterm-color-table
+	url = git://github.com/guns/xterm-color-table.vim.git
