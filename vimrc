@@ -410,12 +410,6 @@ if has ('autocmd')
     	autocmd filetype css,sass,scss,less setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 	augroup end "}}}
 
-    augroup matlab_files "{{{
-    	au!
-    	" Call mlint checker
-    	autocmd BufWritePost *.m compiler mlint
-	augroup end "}}}
-
 	augroup mail_files "{{{
 		au!
 		" Eliminate end of line whitespace highlight
