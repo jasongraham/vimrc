@@ -54,7 +54,7 @@ if v:version >= 730
 	endif
 endif
 set wildignore=*.swp,*.bak,*.pyc,*.class
-set title            " use the terminal's title
+set notitle          " don't overwrite the terminal's title
 set novisualbell     " don't beep
 set noerrorbells     " don't beep
 set cursorline       " Underline the current line, for quick orientation
