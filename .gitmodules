@@ -73,3 +73,6 @@
 [submodule "bundle/xterm-color-table"]
 	path = bundle/xterm-color-table
 	url = git://github.com/guns/xterm-color-table.vim.git
+[submodule "bundle/vim-statline"]
+	path = bundle/vim-statline
+	url = git://github.com/millermedeiros/vim-statline.git
