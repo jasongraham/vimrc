@@ -398,7 +398,7 @@ endif
 
 " gedim settings {{{
 if has("gui_running")
-    let g:screenDimensions = { '1920,1080': [ 100, 80 ], '1280,800': [ 80, 80 ]}
+    let g:screenDimensions = { '1920,1080': [ 100, 80 ], '1280,1024': [90, 80], '1280,800': [ 80, 80 ], '1920,1040': [95, 80]}
 endif
 " }}}
 
