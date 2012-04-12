@@ -327,6 +327,8 @@ if has ('autocmd')
         au!
         " don't show tabs in html / xml files
         autocmd filetype html,xml set listchars-=tab:>.
+        autocmd filetype html,xml setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+
     augroup end "}}}
 
     augroup css_files "{{{
