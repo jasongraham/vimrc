@@ -4,14 +4,17 @@
 " Based on one by Vincent Driessen
 " https://github.com/nvie/vimrc/raw/master/vimrc
 "
+
 " This must be first, because it changes other options as side effect
 set nocompatible
+
+" Since pathogen is being used as a bundle, this must come first.
+runtime bundle/vim-pathogen/autoload/pathogen.vim
 
 " Use pathogen to easily modify the runtime path to include all
 " plugins under the ~/.vim/bundle directory
 filetype off " force reloading AFTER pathogen loaded
-call pathogen#helptags()
-call pathogen#runtime_append_all_bundles()
+call pathogen#infect()
 filetype plugin indent on " enable detection, plugins, and indenting in one step
 
 " Prevent security exploits?
