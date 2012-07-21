@@ -3,3 +3,4 @@ user.vim
 .undo/*
 .netrwhist
 spell
+sel
