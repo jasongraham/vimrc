@@ -166,15 +166,11 @@ let g:indent_guides_start_level=2
 "}}}
 
 " Syntax highlighting and colorschemes {{{
-set t_Co=256
-if &t_Co >= 256 || has("gui_running")
-    colorscheme zenburn
-endif
-
-if &t_Co > 2 || has("gui_running")
-    " switch syntax highlighting on, when the terminal has colors
-    syntax on
-endif
+syntax on
+colorscheme solarized
+" Change background of vim-statline to not be so blatent
+" guifg = base02, guibg = base0
+hi StatusLine guifg=#073642 guibg=#839496 ctermfg=0 ctermbg=15
 "}}}
 
 " Personal quick bindings (using leader key) {{{
