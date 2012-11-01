@@ -343,6 +343,12 @@ if has ('autocmd')
         let g:attach_check_keywords = 'attach,attachment,attached,included'
 
     augroup end "}}}
+
+    augroup vhdl_files "{{{
+        au!
+        " Smaller indents
+        autocmd filetype vhdl setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+    augroup end "}}}
 endif
 " }}}
 
