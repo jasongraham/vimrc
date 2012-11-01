@@ -2,10 +2,6 @@
 #
 # Author: Jason Graham
 
-"""
-Module Docstring
-"""
-
 def main():
     pass
 
