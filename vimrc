@@ -167,6 +167,7 @@ let g:indent_guides_start_level=2
 
 " Syntax highlighting and colorschemes {{{
 syntax on
+set background=dark
 colorscheme solarized
 " Change background of vim-statline to not be so blatent
 " guifg = base02, guibg = base0
