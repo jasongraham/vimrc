@@ -67,9 +67,6 @@
 [submodule "bundle/gedim"]
 	path = bundle/gedim
 	url = https://github.com/vim-scripts/gedim.git
-[submodule "bundle/agtd"]
-	path = bundle/agtd
-	url = https://github.com/fgarcia/agtd.git
 [submodule "bundle/xterm-color-table"]
 	path = bundle/xterm-color-table
 	url = https://github.com/guns/xterm-color-table.vim.git
