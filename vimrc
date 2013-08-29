@@ -49,7 +49,7 @@ set incsearch       " show search matches as you type
 
 set history=1000     " Remeber many commands and search history
 set undolevels=1000  " use many undo levels
-if v:version >= 730
+if v:version >= 703
     set undofile     " Keep a persistent backup file
     if has("win32")
         set undodir=$HOME/vimfiles/.undo,$HOME/tmp,/tmp
@@ -70,7 +70,7 @@ set nolist           " don't show invisible characters by default,
 set formatoptions+=1 " When wrapping paragraphs, don't end lines
 "  with 1 letter words
 
-if v:version >= 730
+if v:version >= 703
     set colorcolumn=85   " See when a line is getting a bit long
 endif
 
