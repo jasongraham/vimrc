@@ -388,6 +388,14 @@ if has("autocmd")
                     execute "0r $HOME/.vim/skeleton/template.markdown"
                 endif
 
+                " bash
+            elseif a:file =~ '.*\sh$'
+                if has("win32")
+                    execute "0r $HOME/vimfiles/skeleton/template.sh"
+                else
+                    execute "0r $HOME/.vim/skeleton/template.sh"
+                endif
+
             endif
         endfunction
     endif
