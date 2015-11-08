@@ -219,10 +219,6 @@ autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 
-" Rainbow parenthesis
-nmap <leader>R :RainbowParenthesesToggle<CR>
-" }}}
-
 " NERDTree settings {{{
 " Put focus to the NERD Tree with F3 (tricked by quickly closing it and
 " immediately showing it again, since there is no :NERDTreeFocus command)
