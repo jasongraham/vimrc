@@ -428,6 +428,6 @@ endfunc
 let g:agtd_calendar_window = 'tab'
 "}}}
 
-" Racker
-let g:racer_cmd    = $HOME . "/.cargo/bin/racer"
-let $RUST_SRC_PATH = $HOME . "/Projects/rust/src"
+" Rust Racer settings
+let g:racer_cmd    = "/usr/bin/racer"
+let $RUST_SRC_PATH = "/usr/src/rust/src"
