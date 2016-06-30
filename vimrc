@@ -424,10 +424,11 @@ function! <SID>SynStack()
 endfunc
 " }}}
 
-" AGTD settings {{{
-let g:agtd_calendar_window = 'tab'
-"}}}
-
-" Rust Racer settings
-let g:racer_cmd    = "/usr/bin/racer"
-let $RUST_SRC_PATH = "/usr/src/rust/src"
+" Rust Racer settings {{{
+if filereadable("/usr/bin/racer")
+    let g:racer_cmd    = "/usr/bin/racer"
+endif
+if isdirectory("/usr/src/rust/src")
+    let $RUST_SRC_PATH = "/usr/src/rust/src"
+endif
+" }}}
