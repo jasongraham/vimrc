@@ -8,6 +8,12 @@
 " This must be first, because it changes other options as side effect
 set nocompatible
 
+" Set the runtimepath to use the local disk rather than $HOME on work
+" computers
+if exists("$VIMINIT")
+    set runtimepath=C:\vimfiles,$VIMRUNTIME
+endif
+
 " Since pathogen is being used as a bundle, this must come first.
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 
@@ -52,7 +58,11 @@ set undolevels=1000  " use many undo levels
 if v:version >= 703
     set undofile     " Keep a persistent backup file
     if has("win32")
-        set undodir=$HOME/vimfiles/.undo,$HOME/tmp,/tmp
+        if exists("$VIMINIT")
+            set undodir=C:\vimfiles\.undo
+        else
+            set undodir=$HOME/vimfiles/.undo,$HOME/tmp,/tmp
+        endif
     else
         set undodir=$HOME/.vim/.undo,$HOME/tmp,/tmp
     endif
@@ -71,7 +81,7 @@ set formatoptions+=1 " When wrapping paragraphs, don't end lines
 "  with 1 letter words
 
 if v:version >= 703
-    set colorcolumn=85   " See when a line is getting a bit long
+    set colorcolumn=80   " See when a line is getting a bit long
 endif
 
 " Backup and swapfiles
@@ -79,7 +89,11 @@ set nobackup
 "set noswapfile
 
 if has("win32")
-    set directory=$HOME/vimfiles/.tmp,$HOME/tmp,/tmp
+    if exists("$VIMINIT")
+        set directory=C:\vimfiles\.tmp
+    else
+        set directory=$HOME/vimfiles/.tmp,$HOME/tmp,/tmp
+    endif
 else
     set directory=$HOME/.vim/.tmp,$HOME/tmp,/tmp
 endif
@@ -229,7 +243,11 @@ nmap <leader>N :NERDTreeClose<CR>
 
 " Store the bookmarks file
 if has("win32")
-    let NERDTreeBookmarksFile=expand("$HOME/vimfiles/NERDTreeBookmarks")
+    if exists("$VIMINIT")
+        let NERDTreeBookmarksFile=expand("C:\vimfiles\NERDTreeBookmarks")
+    else
+        let NERDTreeBookmarksFile=expand("$HOME/vimfiles/NERDTreeBookmarks")
+    endif
 else
     let NERDTreeBookmarksFile=expand("$HOME/.vim/NERDTreeBookmarks")
 endif
@@ -259,7 +277,11 @@ let NERDTreeIgnore=[ '\.pyc$', '\.pyo$', '\.py\$class$', '\.obj$',
 
 " YankRing configuration {{{
 if has("win32")
-    let g:yankring_history_dir = '$HOME/vimfiles/.tmp'
+    if exists("$VIMINIT")
+        let g:yankring_history_dir = 'C:\vimfiles\.tmp'
+    else
+        let g:yankring_history_dir = '$HOME/vimfiles/.tmp'
+    endif
 else
     let g:yankring_history_dir = '$HOME/.vim/.tmp'
 endif
@@ -359,6 +381,18 @@ if has ('autocmd')
         autocmd filetype python setlocal formatoptions-=t
     augroup end "}}}
 
+    augroup perl_files "{{{
+        au!
+        " Expand tabs in python to be spaces
+        autocmd filetype perl setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+    augroup end "}}}
+
+    augroup ruby_files "{{{
+        au!
+        " Expand tabs into spaces
+        autocmd filetype ruby setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+    augroup end "}}}
+
     augroup ruby_files "{{{
         au!
         " Expand tabs into spaces
@@ -403,6 +437,20 @@ if has ('autocmd')
         " Smaller indents
         autocmd filetype vhdl setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
     augroup end "}}}
+
+    augroup verilog_files "{{{
+        au!
+        " Smaller indents
+        autocmd filetype verilog setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+    augroup end "}}}
+
+    augroup xdc_files "{{{
+        au!
+        " Set filetype to sdc_files
+        autocmd BufRead,BufNewFile *.xdc set filetype=sdc
+        " Smaller indents
+        autocmd filetype sdc setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+    augroup end "}}}
 endif
 " }}}
 
@@ -414,7 +462,11 @@ if has("autocmd")
             " Add skeleton fillings for normal python files
             if a:file =~ '.*\.py$'
                 if has("win32")
-                    execute "0r $HOME/vimfiles/skeleton/template.py"
+                    if exists("$VIMINIT")
+                        execute "0r C:\vimfiles\skeleton\template.py"
+                    else
+                        execute "0r $HOME/vimfiles/skeleton/template.py"
+                    endif
                 else
                     execute "0r $HOME/.vim/skeleton/template.py"
                 endif
@@ -422,13 +474,21 @@ if has("autocmd")
                 " C file and header file templates
             elseif a:file =~ '.*\.c$'
                 if has("win32")
-                    execute "0r $HOME/vimfiles/skeleton/template.c"
+                    if exists("$VIMINIT")
+                        execute "0r C:\vimfiles\skeleton\template.c"
+                    else
+                        execute "0r $HOME/vimfiles/skeleton/template.c"
+                    endif
                 else
                     execute "0r $HOME/.vim/skeleton/template.c"
                 endif
             elseif a:file =~ '.*\.h$'
                 if has("win32")
-                    execute "0r $HOME/vimfiles/skeleton/template.h"
+                    if exists("$VIMINIT")
+                        execute "0r C:\vimfiles\skeleton\template.h"
+                    else
+                        execute "0r $HOME/vimfiles/skeleton/template.h"
+                    endif
                 else
                     execute "0r $HOME/.vim/skeleton/template.h"
                 endif
@@ -436,7 +496,11 @@ if has("autocmd")
                 " markdown (jekyll) file template)
             elseif a:file =~ '.*\markdown$'
                 if has("win32")
-                    execute "0r $HOME/vimfiles/skeleton/template.markdown"
+                    if exists("$VIMINIT")
+                        execute "0r C:\vimfiles\skeleton\template.markdown"
+                    else
+                        execute "0r $HOME/vimfiles/skeleton/template.markdown"
+                    endif
                 else
                     execute "0r $HOME/.vim/skeleton/template.markdown"
                 endif
@@ -444,7 +508,11 @@ if has("autocmd")
                 " bash
             elseif a:file =~ '.*\sh$'
                 if has("win32")
-                    execute "0r $HOME/vimfiles/skeleton/template.sh"
+                    if exists("$VIMINIT")
+                        execute "0r C:\vimfiles\skeleton\template.sh"
+                    else
+                        execute "0r $HOME/vimfiles/skeleton/template.sh"
+                    endif
                 else
                     execute "0r $HOME/.vim/skeleton/template.sh"
                 endif
@@ -454,14 +522,6 @@ if has("autocmd")
     endif
 
     autocmd BufNewFile * call LoadTemplate(@%)
-endif
-"}}}
-
-" Extra user or machine specific settings {{{
-if has("win32")
-    source $HOME/vimfiles/user.vim
-else
-    source $HOME/.vim/user.vim
 endif
 "}}}
 
@@ -489,3 +549,16 @@ if isdirectory("/usr/src/rust/src")
     let $RUST_SRC_PATH = "/usr/src/rust/src"
 endif
 " }}}
+
+" Extra user or machine specific settings {{{
+if has("win32")
+    if exists("$VIMINIT")
+        source C:\vimfiles\user.vim
+    else
+        source $HOME/vimfiles/user.vim
+    endif
+else
+    source $HOME/.vim/user.vim
+endif
+"}}}
+
