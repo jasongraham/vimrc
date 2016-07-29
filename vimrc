@@ -406,7 +406,7 @@ if has ('autocmd')
         autocmd filetype markdown set tw=78 wrap
 
         " Eliminate end of line whitespace highlight
-        autocmd filetype markdown hi ExtraWhitespace ctermbg=none guibg=none
+        autocmd filetype markdown hi ExtraWhitespace ctermbg=NONE guibg=NONE
 
     augroup end "}}}
 
@@ -427,7 +427,7 @@ if has ('autocmd')
     augroup mail_files "{{{
         au!
         " Eliminate end of line whitespace highlight
-        autocmd filetype mail hi ExtraWhitespace ctermbg=none guibg=none
+        autocmd filetype mail hi ExtraWhitespace ctermbg=NONE guibg=NONE
         let g:attach_check_keywords = 'attach,attachment,attached,included'
 
     augroup end "}}}
