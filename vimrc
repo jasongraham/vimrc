@@ -275,19 +275,6 @@ let NERDTreeIgnore=[ '\.pyc$', '\.pyo$', '\.py\$class$', '\.obj$',
 
 " }}}
 
-" YankRing configuration {{{
-if has("win32")
-    if exists("$VIMINIT")
-        let g:yankring_history_dir = 'C:\vimfiles\.tmp'
-    else
-        let g:yankring_history_dir = '$HOME/vimfiles/.tmp'
-    endif
-else
-    let g:yankring_history_dir = '$HOME/.vim/.tmp'
-endif
-nmap <leader>r :YRShow<cr>
-"}}}
-
 " Syntastic configuration {{{
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=1
@@ -524,12 +511,6 @@ if has("autocmd")
     autocmd BufNewFile * call LoadTemplate(@%)
 endif
 "}}}
-
-" gedim settings {{{
-if has("gui_running")
-    let g:screenDimensions = { '1920,1080': [ 100, 80 ], '1280,1024': [90, 80], '1280,800': [ 80, 80 ], '1920,1040': [95, 80]}
-endif
-" }}}
 
 " Show syntax highlighting groups for word under cursor {{{
 nmap <leader>z :call <SID>SynStack()<CR>

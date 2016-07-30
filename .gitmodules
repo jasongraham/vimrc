@@ -7,15 +7,6 @@
 [submodule "bundle/vim-repeat"]
 	path = bundle/vim-repeat
 	url = https://github.com/tpope/vim-repeat.git
-[submodule "bundle/vim-surround"]
-	path = bundle/vim-surround
-	url = https://github.com/tpope/vim-surround.git
-[submodule "bundle/vim-yankring"]
-	path = bundle/vim-yankring
-	url = https://github.com/chrismetcalf/vim-yankring.git
-[submodule "bundle/snipmate.vim"]
-	path = bundle/snipmate.vim
-	url = https://github.com/msanders/snipmate.vim.git
 [submodule "bundle/syntastic"]
 	path = bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
@@ -34,9 +25,6 @@
 [submodule "bundle/vim-indent-guides"]
 	path = bundle/vim-indent-guides
 	url = https://github.com/nathanaelkane/vim-indent-guides.git
-[submodule "bundle/vim-extradite"]
-	path = bundle/vim-extradite
-	url = https://github.com/int3/vim-extradite.git
 [submodule "bundle/vim-fugitive"]
 	path = bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
@@ -55,12 +43,6 @@
 [submodule "bundle/checkattach"]
 	path = bundle/checkattach
 	url = https://github.com/vim-scripts/CheckAttach.vim.git
-[submodule "bundle/gedim"]
-	path = bundle/gedim
-	url = https://github.com/vim-scripts/gedim.git
-[submodule "bundle/xterm-color-table"]
-	path = bundle/xterm-color-table
-	url = https://github.com/guns/xterm-color-table.vim.git
 [submodule "bundle/vim-statline"]
 	path = bundle/vim-statline
 	url = https://github.com/millermedeiros/vim-statline.git
