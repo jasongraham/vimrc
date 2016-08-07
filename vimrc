@@ -333,8 +333,9 @@ inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 " Close popup by <Space>.
 "inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"
 
-" AutoComplPop like behavior.
-let g:neocomplete#enable_auto_select = 1
+" Don't select a completion candidate by default, this will let TAB complete
+" and <C-N> select the first match
+let g:neocomplete#enable_auto_select = 0
 
 " Enable omni completion on supported filetypes
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
@@ -350,6 +351,15 @@ endif
 if !exists('g:neocomplete#force_omni_input_patterns')
 	let g:neocomplete#force_omni_input_patterns = {}
 endif
+
+" For smart TAB completion.
+function! s:check_back_space() "{{{
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~ '\s'
+endfunction"}}}
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" :
+            \ <SID>check_back_space() ? "\<TAB>" :
+            \ neocomplete#start_manual_complete()
 
 " }}}
 
