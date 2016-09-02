@@ -73,3 +73,6 @@
 [submodule "bundle/vim-linux-coding-style"]
 	path = bundle/vim-linux-coding-style
 	url = https://github.com/vivien/vim-linux-coding-style.git
+[submodule "bundle/toml"]
+	path = bundle/toml
+	url = https://github.com/cespare/vim-toml.git
