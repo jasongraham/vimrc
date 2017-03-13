@@ -9,9 +9,9 @@ onto your machine, and follow these instructions
 	# First, back up your current ~/.vim folder and ~/.vimrc
 
 	# Clone this git repository and setup the submodules
-	git clone --recursive git://code.the-graham.com/vimrc ~/.vim
+	git clone --recursive https://code.the-graham.com/vimrc ~/.vim
 	# OR
-	git clone --recursive git://github.com/jasongraham/vimrc ~/.vim
+	git clone --recursive https://github.com/jasongraham/vimrc ~/.vim
 
 	# Replace ~/.vimrc with the following 
 	echo "source ~/.vim/vimrc" > ~/.vimrc
