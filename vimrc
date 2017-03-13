@@ -533,12 +533,8 @@ endfunc
 " }}}
 
 " Rust Racer settings {{{
-if filereadable("/usr/bin/racer")
-    let g:racer_cmd    = "/usr/bin/racer"
-endif
-if isdirectory("/usr/src/rust/src")
-    let $RUST_SRC_PATH = "/usr/src/rust/src"
-endif
+" Show complete function definition
+let g:racer_experimental_completer = 1
 " }}}
 
 " Extra user or machine specific settings {{{
